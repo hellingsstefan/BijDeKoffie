@@ -22,8 +22,9 @@ var app = {
 
 app.initialize();
 
-function init() {
-    document.addEventListener("deviceready", deviceInfo, true);
+function onLoad() {
+	console.log("device ready")
+	document.addEventListener("deviceready", onDeviceReady, true);
 }
 
 function msg() {
@@ -31,5 +32,5 @@ function msg() {
 }
 
 function closeApp() {
-    navigator.app.exitApp();
+    navigator.device.exitApp();
 }
