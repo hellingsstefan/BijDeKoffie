@@ -1,0 +1,95 @@
+header {
+	background: @dark-midblue;
+	overflow: hidden;
+	.header-menu {
+		ul {
+			border-left: 1px solid rgba(255, 255, 255, 0.1);
+			box-shadow: -1px 0 0 rgba(0, 0, 0, 0.1);
+			margin-bottom: 0;
+			padding-bottom: 0;
+			li {
+				float: left;
+				a, span {
+					height: 20px;
+					padding: 10px;
+					border-right: 1px solid rgba(0, 0, 0, 0.1);
+					box-shadow: 1px 0 0 rgba(255, 255, 255, 0.10);
+					display: block;
+					svg {
+						fill: white;
+					}
+				}
+			}
+			li.menu-item {
+				a, span {
+					color: @white;
+					font-size: 14px;
+					line-height: 20px;
+					text-decoration: none;
+					font-style: normal;
+					svg {
+						display: block;
+						float: left;
+						margin-right: 5px;
+					}
+					&:hover {
+						background-color: @white;
+						color: @blue;
+						svg {
+							fill: @blue;
+						}
+					}
+				}
+			}
+		}
+		ul.secondary-menu {
+			float: right;
+			li.menu-item.login {
+				a, span {
+					color: @white;
+					font-size: 14px;
+					line-height: 20px;
+					text-decoration: none;
+					font-style: normal;
+					display: block;
+					svg {
+						float: right;
+						display: block;
+						margin: 0 0 0 5px;
+					}
+					&:hover {
+						background-color: @white;
+						color: @blue;
+						svg {
+							fill: @blue;
+						}
+					}
+				}
+				.hidden {
+					display: none;
+				}
+				.login-close {
+					color: @blue;
+					background-color: @white;
+				}
+				.login-menu {
+					background-color: @white;
+					display: none;
+					position: absolute;
+					top: 40px;
+					left: 0;
+					right: 0;
+					padding: 20px;
+					input[type="text"], input[type="password"] {
+						.input-field;
+						margin-bottom: 10px;
+					}
+					input[type="submit"] {
+						.button('turquoise');
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}

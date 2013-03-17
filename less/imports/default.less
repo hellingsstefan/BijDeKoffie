@@ -1,0 +1,53 @@
+/* Center containers */
+.container {
+	margin: 0 auto;
+}
+
+/* Default styling */
+html, body {
+	font-family: @font-default;
+	font-size: @font-size;
+	background: #fff;
+	color: rgb(125,125,125);
+	.selection(  );
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin-bottom: 20px;
+}
+h1, h2, h3, h4, h5, h6 { 
+	display: inline-block;
+} 
+
+h1 { 
+	font-size: (@font-size * 2.5); 
+	.line-height( (@font-size*2.5) );
+}
+h2 { font-size: (@font-size * 2); }
+h3, th { font-size: (@font-size * 1.5); }
+h4, h5, h6, p, address, dt, dd, li, label, input, td, option{ 
+	font-size: (@font-size * 1); 
+}
+
+b, strong, .bold, .stong { font-weight: bold; }
+i, em, .italic { font-style: italic; }
+small, .small { font-size: (@font-size * 0.7); }
+abbr { border-bottom: 1px dotted; }
+
+hr { 
+	border: none;
+	border-bottom: 1px solid #ddd; 
+}
+
+input, label {
+	margin-bottom: 10px;
+}
+/* Buttons */
+button, input[type='button'], input[type='submit'], input[type='reset'] {
+	border: none;
+	font-size: @font-size;
+	padding: 5px;
+	cursor: pointer;
+	#gradients > .vertical( rgb(245,245,245), rgb(240,240,240) );
+	.border(rgba(0,0,0,0.15), 1px, 3px);
+}

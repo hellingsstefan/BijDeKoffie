@@ -1,0 +1,20 @@
+.set-button() {
+	border: none;
+	background: none;
+	padding: 5px;
+	.border-radius();
+	cursor: pointer;
+}
+.button(@c: "blue") {
+	.set-button();
+	.mixin(@@c);
+	background: @@c;
+	&:hover { background: darken(@@c, 5%); }
+	&:active { background: darken(@@c, 10%); }
+}
+.mixin (@a) when (lightness(@a) >= 50%) {
+  color: @black;
+}
+.mixin (@a) when (lightness(@a) < 50%) {
+  color: @white;
+}
