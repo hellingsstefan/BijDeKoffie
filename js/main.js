@@ -14,7 +14,7 @@ var app = {
     },
 
     initialize: function() {
-        this.store = new MemoryStore();
+        this.store = new LocalStorageStore();
         $('.search-key').on('keyup', $.proxy(this.findByName, this));
     }
 
@@ -23,6 +23,10 @@ var app = {
 app.initialize();
 
 jQuery(document).ready(function($) {
+	// SHOW BODY
+	$('body').fadeIn('slow');
+
+	// FadeIn Page Switch
 	$('a').click(function(e){
 		e.preventDefault();
 		var loc = $(this).attr('href');

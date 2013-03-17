@@ -1,6 +1,6 @@
 
-html{height:100%;}
-body{font-family:"Roboto Light",source-sans-pro,serif;font-size:18px;margin:0;padding:0;height:100%;background-color:#8cc4ea;overflow:hidden;position:relative;}
+html{height:100%;background-color:#8cc4ea;}
+body{font-family:"Roboto Light",source-sans-pro,serif;font-size:18px;margin:0;padding:0;height:100%;background-color:#8cc4ea;overflow:hidden;position:relative;display:none;}
 .container{padding:40px;}
 .row{width:100%;margin:0 auto;display:block;}
 .home .row{height:280px;position:absolute;top:50%;margin-top:-140px;}
