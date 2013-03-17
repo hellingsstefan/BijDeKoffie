@@ -22,15 +22,12 @@ var app = {
 
 app.initialize();
 
-function onLoad() {
-	console.log("device ready")
-	document.addEventListener("deviceready", onDeviceReady, true);
-}
-
-function msg() {
-    alert("button clicked");
-}
-
-function closeApp() {
-    navigator.device.exitApp();
-}
+jQuery(document).ready(function($) {
+	$('a').click(function(e){
+		e.preventDefault();
+		var loc = $(this).attr('href');
+		$('body').fadeOut('slow', function(){
+			window.location = loc;
+		});
+	});
+});
