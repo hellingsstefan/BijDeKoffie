@@ -22,23 +22,14 @@ var app = {
 
 app.initialize();
 
-jQuery(document).ready(function($) {
-    //EXIT APP
-    $('.exitApp').click(function(e){
-        console.log('exitApp trigered');
-        e.preventDefault();
-        navigator.app.exitApp();
-    });
-});
-
 function init() {
-    // the next line makes it impossible to see Contacts on the HTC Evo since it
-    // doesn't have a scroll button
-    // document.addEventListener("touchmove", preventBehavior, false);
     document.addEventListener("deviceready", deviceInfo, true);
 }
 
-function msg()
-{
+function msg() {
     alert("button clicked");
+}
+
+function closeApp() {
+    navigator.app.exitApp();
 }
