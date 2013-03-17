@@ -22,10 +22,11 @@ var app = {
 
 app.initialize();
 
-$(jQuery(document).ready(function($) {
+jQuery(document).ready(function($) {
     //EXIT APP
     $('.exitApp').click(function(e){
+        console.log('exitApp trigered');
         e.preventDefault();
-        app.exitApp();
+        navigator.app.exitApp();
     });
-});)
+});
