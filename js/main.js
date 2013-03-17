@@ -21,3 +21,11 @@ var app = {
 };
 
 app.initialize();
+
+$(jQuery(document).ready(function($) {
+    //EXIT APP
+    $('.exitApp').click(function(e){
+        e.preventDefault();
+        app.exitApp();
+    });
+});)

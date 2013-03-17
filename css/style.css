@@ -3,5 +3,6 @@ html{height:100%;}
 body{font-family:"Roboto Light",source-sans-pro,serif;font-size:18px;margin:0;padding:0;height:100%;background-color:#8cc4ea;overflow:hidden;position:relative;}
 .container{padding:40px;}
 .row{width:100%;margin:0 auto;display:block;}
-.button-yellow{border:none;background:none;padding:5px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;cursor:pointer;color:#000000;background:#f1c40f;width:200px;text-align:center;margin:0 auto;margin-bottom:10px;color:#ffffff;text-decoration:none;display:block;}.button-yellow:hover{background:#dab10d;}
+.home .row{height:280px;position:absolute;top:50%;margin-top:-140px;}
+.button-yellow{border:none;background:none;padding:25px;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;cursor:pointer;color:#000000;background:#f1c40f;width:200px;text-align:center;margin:0 auto;margin-bottom:20px;color:#ffffff;text-decoration:none;display:block;font-weight:bold;}.button-yellow:hover{background:#dab10d;}
 .button-yellow:active{background:#c29d0b;}
