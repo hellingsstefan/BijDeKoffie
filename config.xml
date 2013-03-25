@@ -14,10 +14,6 @@
     <author href="http://www.stefanhellings.be" email="hellingsstefan@gmail.com">
         Stefan Hellings
     </author>
- 
-    <feature name="http://api.phonegap.com/1.0/file"/>
-    <feature name="http://api.phonegap.com/1.0/media"/>
-    <feature name="http://api.phonegap.com/1.0/notification"/>
 
     <preference name="fullscreen" value="true" />
     <preference name="orientation" value="landscape" />

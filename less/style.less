@@ -1,4 +1,4 @@
-// @import 'imports/reset.less';
+@import 'imports/reset.less';
 @import 'imports/functions.less';
 @import 'imports/vars.less';
 @import 'imports/buttons.less';
@@ -9,45 +9,10 @@ html {
 }
 
 body {
-	font-family: "Roboto Light" ,source-sans-pro, serif;
+	font-family: "Roboto Light", source-sans-pro, serif;
 	font-size: 18px;
 	margin: 0;
 	padding: 0;
-	height: 100%;
 	background-color: lighten(@blue, 20%);
 	overflow: hidden;
-	position: relative;
-	display: none;
-}
-
-.container {
-	padding: 40px;
-}
-
-.row {
-	width: 100%;
-	margin: 0 auto;
-	display: block;
-}
-
-.home {
-	.row {
-		@h: 280px;
-		height: @h;
-		position: absolute;
-		top: 50%;
-		margin-top: -(@h/2);
-	}
-}
-
-.button-yellow {
-	.button("yellow");
-	width: 200px;
-	text-align: center;
-	margin: 0 auto;
-	margin-bottom: 20px;
-	color: @white;
-	text-decoration: none;
-	display: block;
-	font-weight: bold;
 }
