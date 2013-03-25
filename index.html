@@ -5,24 +5,51 @@
 </head>
 <body>
 
-	<script id="home-tpl" type="text/x-handlebars-template">
-		<div class="header"><h1>Home</h1></div>
-		<div class="search-bar"><input class="search-key" type="search"/></div>
-		<div class="scroll"><ul class='employee-list'></ul></div>
+	<!-- STARTSCREEN -->
+	<script id="tpl-start" type="text/x-handlebars-template">
+		<div class="button">
+			<a href="#" class="getRandomQuestion">Get a random question</a>
+		</div>
+		<div class="button">
+			<a href="#another-page" class="newPage">Go to another page</a>
+		</div>
 	</script>
 
-	<script id="employee-li-tpl" type="text/x-handlebars-template">
-		{{#.}}
-		<li><a href="#employees/{{this.id}}">{{this.firstName}} {{this.lastName}}<br/>{{this.title}}</a></li>
-		{{/.}}
+	<!-- POPUP -->
+	<script id="tpl-popup" type="text/x-handlebars-template">
+		<div class="popup">
+			<div class="inner">
+				<div class="close">
+					<a href="#">Close</a>
+				</div>
+				<p>{{id}} {{title}}</p>
+			</div>
+		</div>
 	</script>
 
+
+
+	<!-- NEW SCREEN -->
+	<script id="tpl-another-page" type="text/x-handlebars-template">
+		<div class="another-page">
+			<div class="inner">
+				<h1> Another Page </h1>
+				<a href="#"> back </a>
+			</div>
+		</div>
+	</script>
+
+
+	<!--
 	<script src="phonegap.js"></script>
+	-->
 	<script src="lib/jquery-1.9.1.min.js"></script>
 	<script src="lib/handlebars.js"></script>
-	<script src="lib/iscroll.js"></script>
 	<script src="js/storage/memory-store.js"></script>
-	<script src="js/HomeView.js"></script>
+	
+	<script src="js/StartView.js"></script>
+	<script src="js/AnotherView.js"></script>
+	
 	<script src="js/main.js"></script>
 
 </body>
