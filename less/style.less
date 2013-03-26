@@ -15,6 +15,9 @@
 // Popup
 @import 'imports/popup.less';
 
+// Animations
+@import 'imports/keyframe-animations.less';
+
 
 html {
 	height: 100%;
@@ -31,6 +34,19 @@ body {
 	color: @midblue;
 	overflow: hidden;
 	position: relative;
+}
+
+.screen {
+	display: block;
+	height: 100%;
+	.transition(0.4s, ease-in-out, all);
+	.transform(scale(0,0));
+}
+
+.show-screen {
+	.transition(0.4s, ease-in-out, all);
+	.animation(scale-up 1s);
+	.transform(scale(1,1));	
 }
 
 .scroll {

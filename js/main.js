@@ -16,21 +16,24 @@ var app = {
 	route: function() {
 		var hash = window.location.hash; // GET HASH from URL (eg: localhost/#this-page > '#this-page')
 
-		// Geen hashtag? GO TO START
+		// No hashtag? GO TO START
 		if (!hash) {
-			$('body').fadeOut('fast', function(){
-				// Start new view sith app.store data
-				$(this).html(new StartView(app.store).render().el).fadeIn();
-			});
+			// Start new view with app.store data
+			$('body .screen').removeClass('show-screen');
+			setTimeout(function(){
+				$('body .screen').html(new StartView(app.store).render().el).addClass('show-screen');
+			}, 1000);
+				
 			return;
 		} else {
 			var page = app.pages[hash];
-			// each page object has the method .render()
-			var pageHtml = page.render().el;
+			var pageHtml = page.render().el; // each page object has the method .render()
 
-			$('body').fadeOut('fast', function(){
-				$(this).html(pageHtml).fadeIn();
-			});
+			$('body .screen').removeClass('show-screen');
+			setTimeout(function(){
+				$('body .screen').html(pageHtml).addClass('show-screen');
+			}, 1000);
+							 
 			return;
 		}
 	},
@@ -72,10 +75,12 @@ var app = {
 app.initialize();
 
 $(document).ready(function() {
+	// Show startscreen
+	$('body .screen').addClass('show-screen');
 	// Close Popup
-	$('body').delegate( '.popup .close a', 'click', function(e) {
+	$('body .screen').delegate( '.popup .close a', 'click', function(e) {
 		e.preventDefault();
-		$('.popup').fadeOut();
+		$('.popup').removeClass('show-popup');
 	});
 });
 

@@ -19,11 +19,11 @@ var StartView = function(store) {
 		var id = Math.floor((Math.random()*15)+1);
 		store.findById(id, function(questions) {
 			// remove each previous popup instance
-			$('body').find('.popup').each(function(){
+			$('body .screen').find('.popup').each(function(){
 				$(this).remove();
 			});
-			$('body').append(StartView.popupTemplate(questions));
-			$('.popup').fadeIn();
+			$('body .screen').append(StartView.popupTemplate(questions));
+			$('.popup').addClass('show-popup');
 		});
 	};
 
