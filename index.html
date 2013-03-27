@@ -15,9 +15,14 @@
 
 	<!-- STARTSCREEN -->
 	<script id="tpl-start" type="text/x-handlebars-template">
-		<a href="#" class="button button-blue button-large getRandomQuestion">Get a random question</a>
-		<a href="#another-page" class="button newPage">Go to another page</a>
-		<a href="#this-page" class="button newPage">Go to this page</a>
+		<div class="container">
+			<div class="menu">
+				<a href="#" class="btn btn-blue btn-large getRandomQuestion">Get a random question</a>
+				<a href="#another-page" class="btn newPage">Start een spel</a>
+				<a href="#this-page" class="btn newPage">Opties</a>
+				<a href="#this-page" class="btn newPage quit-app">Stoppen</a>
+			</div>
+		</div>
 	</script>
 
 	<!-- POPUP -->
@@ -25,7 +30,7 @@
 		<div class="popup">
 			<div class="inner">
 				<div class="close">
-					<a href="#" class="button">Close x</a>
+					<a href="#" class="btn">Close x</a>
 				</div>
 				<p>{{id}} {{title}}</p>
 			</div>
@@ -39,7 +44,7 @@
 		<div class="another-page">
 			<div class="inner">
 				<h1> Another Page </h1>
-				<a href="#" class="button"> back </a>
+				<a href="#" class="btn"> back </a>
 			</div>
 		</div>
 	</script>
@@ -49,7 +54,7 @@
 		<div class="this-page">
 			<div class="inner">
 				<h1> This Page </h1>
-				<a href="#" class="button"> back </a>
+				<a href="#" class="btn"> back </a>
 			</div>
 		</div>
 	</script>

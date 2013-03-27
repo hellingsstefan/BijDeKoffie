@@ -86,6 +86,11 @@ $(document).ready(function() {
 		e.preventDefault();
 		$('.popup').removeClass('show-popup');
 	});
+
+	$('body .screen').delegate( '.quit-app', 'click', function(e) {
+		e.preventDefault();
+		navigator.app.exitApp();
+	});
 });
 
 document.addEventListener("deviceready", onDeviceReady, false);

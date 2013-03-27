@@ -1,4 +1,4 @@
-.set-button {
+.set-btn {
 	display: inline-block;
 	padding: 11px 19px;
 	margin-bottom: 0;
@@ -29,6 +29,7 @@
 	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 	text-decoration: none;
+	margin-bottom: 10px;
 }
 .btn.disabled, .btn[disabled] {
 	cursor: default;
@@ -39,8 +40,8 @@
 	-moz-box-shadow: none;
 	box-shadow: none;
 }
-.button(@c: "blue") {
-	.set-button;
+.btn(@c: "blue") {
+	.set-btn;
 	.mixin(@@c);
 	background: @@c;
 	&:hover { background: darken(@@c, 5%); }
@@ -53,17 +54,16 @@
   color: @white;
 }
 
-.button-large {
+.btn-large {
 	padding: 21px 29px!important;
 	font-size: 19px;
 	.border-radius(9px);
 }
 
-// BUTTONS
-.button {
-	.button("silver");
+.btn {
+	.set-btn;
 }
-.button-blue {
-	.button("blue");
+.btn-blue {
+	.btn("blue");
 	color: @white;
 }
