@@ -93,7 +93,10 @@ function onDeviceReady() {
 	document.addEventListener("backbutton", onBackKeyDown, false);
 }
 function onBackKeyDown() {
-	navigator.app.exitApp();
+	var hash = window.location.hash;
+	if(!hash || hash === '#') {
+		navigator.app.exitApp();
+	}
 }
 
 
