@@ -96,7 +96,9 @@ function onBackKeyDown() {
 	var hash = window.location.hash;
 	if(!hash || hash === '#') {
 		navigator.app.exitApp();
-	}
+	} else {
+        navigator.app.backHistory()
+    }
 }
 
 
