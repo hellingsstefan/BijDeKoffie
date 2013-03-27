@@ -10,13 +10,13 @@
 	</div>
 
 	<div class="loading-screen">
-		&nbsp;
+		<img src="img/loading-image.jpg">
 	</div>
 
 	<!-- STARTSCREEN -->
 	<script id="tpl-start" type="text/x-handlebars-template">
-		<a href="#" class="button-blue getRandomQuestion">Get a random question</a>
-		<a href="#another-page" class="button newPage">Go to another page</a><br/>
+		<a href="#" class="button button-blue button-large getRandomQuestion">Get a random question</a>
+		<a href="#another-page" class="button newPage">Go to another page</a>
 		<a href="#this-page" class="button newPage">Go to this page</a>
 	</script>
 
@@ -25,7 +25,7 @@
 		<div class="popup">
 			<div class="inner">
 				<div class="close">
-					<a href="#">Close</a>
+					<a href="#" class="button">Close x</a>
 				</div>
 				<p>{{id}} {{title}}</p>
 			</div>
@@ -39,7 +39,7 @@
 		<div class="another-page">
 			<div class="inner">
 				<h1> Another Page </h1>
-				<a href="#"> back </a>
+				<a href="#" class="button"> back </a>
 			</div>
 		</div>
 	</script>
@@ -49,7 +49,7 @@
 		<div class="this-page">
 			<div class="inner">
 				<h1> This Page </h1>
-				<a href="#"> back </a>
+				<a href="#" class="button"> back </a>
 			</div>
 		</div>
 	</script>
