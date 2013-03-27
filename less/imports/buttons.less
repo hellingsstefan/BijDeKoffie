@@ -1,12 +1,16 @@
-.set-button() {
+// BUTTON FUNCTION
+.set-button {
 	border: none;
 	background: none;
 	padding: 25px;
 	.border-radius(10px);
 	cursor: pointer;
+	display: block;
+	float: left;
+	text-decoration: none;
 }
 .button(@c: "blue") {
-	.set-button();
+	.set-button;
 	.mixin(@@c);
 	background: @@c;
 	&:hover { background: darken(@@c, 5%); }
@@ -17,4 +21,12 @@
 }
 .mixin (@a) when (lightness(@a) < 50%) {
   color: @white;
+}
+
+// BUTTONS
+.button {
+	.button("silver");
+}
+.button-blue {
+	.button("blue");
 }

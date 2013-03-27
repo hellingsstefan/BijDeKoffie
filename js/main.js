@@ -19,21 +19,27 @@ var app = {
 		// No hashtag? GO TO START
 		if (!hash) {
 			// Start new view with app.store data
-			$('body .screen').removeClass('show-screen');
+			$('.loading-screen').addClass('show-loading-screen');
 			setTimeout(function(){
-				$('body .screen').html(new StartView(app.store).render().el).addClass('show-screen');
+				$('body .screen').html(new StartView(app.store).render().el);
 			}, 1000);
-				
+			setTimeout(function(){
+				$('.loading-screen').removeClass('show-loading-screen');
+			}, 2000);
+			
 			return;
 		} else {
 			var page = app.pages[hash];
 			var pageHtml = page.render().el; // each page object has the method .render()
 
-			$('body .screen').removeClass('show-screen');
+			$('.loading-screen').addClass('show-loading-screen');
 			setTimeout(function(){
-				$('body .screen').html(pageHtml).addClass('show-screen');
+				$('body .screen').html(pageHtml);
 			}, 1000);
-							 
+			setTimeout(function(){
+				$('.loading-screen').removeClass('show-loading-screen');
+			}, 2000);
+			
 			return;
 		}
 	},
@@ -75,8 +81,6 @@ var app = {
 app.initialize();
 
 $(document).ready(function() {
-	// Show startscreen
-	$('body .screen').addClass('show-screen');
 	// Close Popup
 	$('body .screen').delegate( '.popup .close a', 'click', function(e) {
 		e.preventDefault();

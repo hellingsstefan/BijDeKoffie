@@ -36,17 +36,28 @@ body {
 	position: relative;
 }
 
+// SCREEN
 .screen {
 	display: block;
 	height: 100%;
-	.transition(0.4s, ease-in-out, all);
-	.transform(scale(0,0));
 }
 
 .show-screen {
+}
+
+// LOADING SCREEN
+.loading-screen {
 	.transition(0.4s, ease-in-out, all);
-	.animation(scale-up 1s);
-	.transform(scale(1,1));	
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #791E1B url(../img/loading-image.jpg) center center no-repeat;
+	top: 0;
+	left: -100%;
+}
+
+.show-loading-screen {
+	left: 0;
 }
 
 .scroll {
