@@ -36,6 +36,11 @@ body {
 	position: relative;
 }
 
+.hidden {
+	display: none!important;
+	visibility: hidden!important;
+}
+
 // SCREEN
 .screen {
 	display: block;
@@ -47,6 +52,8 @@ body {
 
 // SCREEN STYLES
 @import 'screens/startscreen.less';
+@import 'screens/gameselectionscreen.less';
+@import 'screens/gametypeone.less';
 
 
 // LOADING SCREEN
@@ -73,9 +80,8 @@ body {
 .scroll {
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
-	position: absolute;
-	top: 84px;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
+}
+
+label {
+	.btn;
 }

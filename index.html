@@ -18,9 +18,9 @@
 		<div class="container">
 			<div class="menu">
 				<a href="#" class="btn btn-blue btn-large getRandomQuestion">Get a random question</a>
-				<a href="#another-page" class="btn newPage">Start een spel</a>
-				<a href="#this-page" class="btn newPage">Opties</a>
-				<a href="#this-page" class="btn newPage quit-app">Stoppen</a>
+				<a href="#game-type-selection" class="btn newPage">Start een spel</a>
+				<a href="#" class="btn newPage">Opties</a>
+				<a href="#" class="btn newPage quit-app">Stoppen</a>
 			</div>
 		</div>
 	</script>
@@ -32,29 +32,70 @@
 				<div class="close">
 					<a href="#" class="btn">Close x</a>
 				</div>
-				<p>{{id}} {{title}}</p>
+				<h2 class="question">{{id}} {{question}}</h2>
+				<div class="answers">
+					<a href="#" class="answer btn" data-correct="true">{{correct-answer}}</a>
+					<a href="#" class="answer btn">{{option-2}}</a>
+					<a href="#" class="answer btn">{{option-3}}</a>
+					<a href="#" class="answer btn">{{option-4}}</a>
+				</div>
+				<div class="explanation scroll hidden">
+					<p>{{explanation}}</p>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(document).ready(function() {
+				popupReady();
+			});
+		</script>
+	</script>
+
+	<!-- GAME TYPE SELECTION -->
+	<script id="tpl-game-type-selection" type="text/x-handlebars-template">
+		<div class="container">
+			<div class="center">
+				<!-- GAME TYPE ONE: Quizkoning -->
+				<div class="menu-game-selection">
+					<h1>Speltype 1: De Quizkoning</h1>
+					<a href="#game-type-one" class="btn" onClick="app.players=1;app.gametype=1">1 speler</a>
+					<a href="#game-type-one" class="btn" onClick="app.players=2;app.gametype=1">2 spelers</a>
+					<a href="#game-type-one" class="btn" onClick="app.players=3;app.gametype=1">3 spelers</a>
+					<a href="#game-type-one" class="btn" onClick="app.players=4;app.gametype=1">4 spelers</a>
+				</div>
+
+				<!-- GAME TYPE TWO: Het Strijdspel -->
+				<div class="menu-game-selection">
+					<h1>Speltype 2: Het Strijdspel</h1>
+					<a href="#" class="btn btn-disabled">1 speler</a>
+					<a href="#" class="btn" onClick="app.players=2;app.gametype=2">2 spelers</a>
+					<a href="#" class="btn" onClick="app.players=3;app.gametype=2">3 spelers</a>
+					<a href="#" class="btn" onClick="app.players=4;app.gametype=2">4 spelers</a>
+				</div>
 			</div>
 		</div>
 	</script>
 
 
 
-	<!-- NEW SCREEN -->
-	<script id="tpl-another-page" type="text/x-handlebars-template">
-		<div class="another-page">
-			<div class="inner">
-				<h1> Another Page </h1>
-				<a href="#" class="btn"> back </a>
+	<!-- GameType 1: QuizKing -->
+	<script id="tpl-game-type-one" type="text/x-handlebars-template">
+		<div class="container game-type-one">
+			<div class="overlay">
+				<h1>Kies de categorie&euml;n</h1>
+				<label class="checkbox"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
+				<label class="checkbox"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
+				<label class="checkbox"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
+				<label class="checkbox"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
+				<label class="checkbox"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
+				<label class="checkbox"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
+				<label class="checkbox"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
+				<label class="checkbox"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
+				<label class="checkbox"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
+				<button class="btn btn-blue" onClick="startGameTypeOne();">Start</button>
 			</div>
-		</div>
-	</script>
+			<div class="players hidden">
 
-	<!-- Another Screen -->
-	<script id="tpl-this-page" type="text/x-handlebars-template">
-		<div class="this-page">
-			<div class="inner">
-				<h1> This Page </h1>
-				<a href="#" class="btn"> back </a>
 			</div>
 		</div>
 	</script>
@@ -64,10 +105,11 @@
 	<script src="lib/jquery-1.9.1.min.js"></script>
 	<script src="lib/handlebars.js"></script>
 	<script src="js/storage/memory-store.js"></script>
+	<script src="js/storage/data.js"></script>
 	
 	<script src="js/StartView.js"></script>
-	<script src="js/ThisView.js"></script>
-	<script src="js/AnotherView.js"></script>
+	<script src="js/GameTypeSelectionView.js"></script>
+	<script src="js/GameTypeOneView.js"></script>
 	
 	<script src="js/main.js"></script>
 

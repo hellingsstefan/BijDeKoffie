@@ -4,20 +4,28 @@
 	position: relative;
 }
 
-.menu {
+.center {
+	width: 800px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	margin: -380px/2 0 0 -420px;
+}
+
+.menu-game-selection {
 	@w: 300px;
 	@h: @w;
 	width: @w;
 	height: @h;
 	padding: 40px;
-	position: absolute;
-	top: 40%;
-	left: 50%;
-	margin: -@w/2 0 0 -@h/2;
+	margin-left: 20px;
 	background: @white;
 	.border-radius(10px);
 	.btn {
 		width: 100%;
 		.box-sizing();
 	}
+	float: left;
+	display: block;
+
 }
