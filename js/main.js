@@ -110,6 +110,7 @@ function onBackKeyDown() {
 	if(!hash || hash === '#') {
 		navigator.app.exitApp();
 	} else {
+		resetScore();
 		navigator.app.backHistory()
 	}
 }
@@ -162,6 +163,13 @@ function addScore() {
 	var cp = app.current_player;
 	app.score[cp]++;
 	$('.player:nth-child('+app.current_player+') span').html(app.score[cp]);
+}
+
+function resetScore() {
+	app.score[1] = 0;
+	app.score[2] = 0;
+	app.score[3] = 0;
+	app.score[4] = 0;
 }
 
 function nextPlayer() {
