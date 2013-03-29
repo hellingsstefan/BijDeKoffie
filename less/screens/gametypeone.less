@@ -8,6 +8,14 @@
 		padding: 20px;
 		background: @white;
 		.border-radius(20px);
+		z-index: 10;
+	}
+	.btn {
+		width: 45%;
+		.box-sizing();
+		margin-bottom: 10px;
+		margin-right: 2%; 
+		float: left;
 	}
 }
 
@@ -19,6 +27,7 @@
 	right: 0;
 }
 .player {
+	.transition(0.4s);
 	background: @white;
 	.border-radius(20px);
 	width: 40%;
@@ -26,4 +35,22 @@
 	display: block;
 	float: left;
 	margin: 5%;
+	.opacity(0.5);
+}
+.current {
+	.opacity(1);
+}
+
+.current-round {
+	z-index: 0;
+	width: 150px;
+	height: 150px;
+	.border-radius(150px);
+	text-align: center;
+	line-height: 150px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -75px 0 0 -75px;
+	background: @white;
 }

@@ -83,21 +83,49 @@
 		<div class="container game-type-one">
 			<div class="overlay">
 				<h1>Kies de categorie&euml;n</h1>
-				<label class="checkbox"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
-				<label class="checkbox"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
-				<label class="checkbox"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
-				<label class="checkbox"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
-				<label class="checkbox"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
-				<label class="checkbox"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
-				<label class="checkbox"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
-				<label class="checkbox"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
-				<label class="checkbox"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
+				<label class="checkbox btn"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
+				<label class="checkbox btn"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
+				<label class="checkbox btn"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
+				<label class="checkbox btn"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
+				<label class="checkbox btn"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
+				<label class="checkbox btn"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
+				<label class="checkbox btn"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
+				<label class="checkbox btn"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
+				<label class="checkbox btn"><input type="checkbox" name="choose-categorie" value="Checkbox" />Categorie</label>
 				<button class="btn btn-blue" onClick="startGameTypeOne();">Start</button>
+			</div>
+			<div class="current-round">
+				&nbsp;
 			</div>
 			<div class="players hidden">
 
 			</div>
 		</div>
+	</script>
+	<!-- QuizKoning POPUP -->
+	<script id="tpl-game-type-one-popup" type="text/x-handlebars-template">
+		<div class="popup">
+			<div class="inner">
+				<h2 class="question">{{id}} {{question}}</h2>
+				<div class="answers">
+					<a href="#" onClick="addScore();" class="answer btn" data-correct="true">{{correct-answer}}</a>
+					<a href="#" class="answer btn">{{option-2}}</a>
+					<a href="#" class="answer btn">{{option-3}}</a>
+					<a href="#" class="answer btn">{{option-4}}</a>
+				</div>
+				<div class="explanation scroll hidden">
+					<p>{{explanation}}</p>
+					<div class="close">
+						<a href="#" class="btn" onClick="nextRound();">Volgende vraag</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(document).ready(function() {
+				popupReady();
+			});
+		</script>
 	</script>
 
 

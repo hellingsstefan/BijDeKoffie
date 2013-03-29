@@ -2,6 +2,14 @@ var app = {
 
 	players: 0, // FROM 1 TO 4
 	gametype: 0, // 1 = QuizKoning, 2 = Het Strijdspel
+	score: {
+		1: 0,
+		2: 0,
+		3: 0,
+		4: 0
+	},
+	current_player: 0,
+	current_round: 0,
 
 	showAlert: function (message, title) {
 		if (navigator.notification) {
@@ -45,6 +53,18 @@ var app = {
 			
 			return;
 		}
+	},
+
+	getRandomQuestion: function() {
+		var id = Math.floor((Math.random()*15)+1);
+		app.store.findById(id, function(questions) {
+			// remove each previous popup instance
+			$('body .screen').find('.popup').each(function(){
+				$(this).remove();
+			});
+			$('body .screen').append(GameTypeOneView.popupTemplate(questions));
+			$('.popup').addClass('show-popup');
+		});
 	},
 
 	initialize: function() {
@@ -120,12 +140,51 @@ function startGameTypeOne() {
 
 	var game = "";
 	for ( var i=0; i < app.players ; i++ ) {
-		game += '<div class="player">&nbsp;</div>';
+		game += '<div class="player">';
+		game += '<h1>Speler ' + (i+1) + '</h1>';
+		game += '<p>Score <span>' + app.score[i+1] + '</span></p>'; 
+		game += '</div>';
 	}
 	$('.players').html(game).removeClass("hidden");
 	$('.overlay').addClass("hidden");
+	setTimeout(function(){
+		$('.players').children(":first").addClass('current');
+		app.current_player = 1;
+		app.current_round = 1;
+		$('.current-round').html(app.current_round);
+	}, 1000);
+	setTimeout(function(){
+		app.getRandomQuestion();
+	}, 2000);
 }
 
+function addScore() {
+	var cp = app.current_player;
+	app.score[cp]++;
+	$('.player:nth-child('+app.current_player+') span').html(app.score[cp]);
+}
+
+function nextPlayer() {
+	if(app.current_player+1 > app.players) {
+		app.current_player = 1;
+	}
+	else {
+		app.current_player++;
+	}
+}
+
+function nextRound() {
+	app.current_round++;
+	nextPlayer();
+	setTimeout(function(){
+		$('.current').removeClass('current');
+		$('.player:nth-child('+app.current_player+')').addClass('current');
+		$('.current-round').html(app.current_round);
+	}, 1000);
+	setTimeout(function(){
+		app.getRandomQuestion();
+	}, 2000);
+}
 
 (function($) {
 	$.fn.randomize = function(childElem) {

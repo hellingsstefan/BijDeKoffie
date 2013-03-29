@@ -16,3 +16,4 @@ var GameTypeOneView = function(store) {
 }
 
 GameTypeOneView.template = Handlebars.compile($("#tpl-game-type-one").html());
+GameTypeOneView.popupTemplate = Handlebars.compile($("#tpl-game-type-one-popup").html());
